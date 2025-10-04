@@ -1,2 +1,2 @@
-# jekyll-hackathon-website
-Hackathon website hosted using jekyll
+# hackathon-website
+Static hackathon website hosted using GitHub Pages
