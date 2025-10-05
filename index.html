@@ -115,6 +115,7 @@
       /* Card Flip styles */
       .card-flip {
         perspective: 1500px;
+        cursor: pointer;
       }
       .card-flip-inner {
         position: relative;
@@ -123,7 +124,8 @@
         transition: transform 0.8s;
         transform-style: preserve-3d;
       }
-      .card-flip:hover .card-flip-inner {
+      .card-flip:hover .card-flip-inner,
+      .card-flip.is-flipped .card-flip-inner {
         transform: rotateY(180deg);
       }
       .card-front, .card-back {
@@ -138,6 +140,13 @@
         transform: rotateY(180deg);
       }
 
+      /* For tap vs hover prompt text */
+      .tap-text { display: none; }
+      @media (hover: none) {
+        .hover-text { display: none; }
+        .tap-text { display: block; }
+      }
+      
       /* Glassmorphism Background */
       #background-aurora {
         pointer-events: none;
@@ -219,6 +228,11 @@
         pointer-events: none;
       }
 
+      @media (max-width: 1023px) {
+        #mlh-trust-badge {
+          display: none !important;
+        }
+      }
     </style>
   <script type="importmap">
 {
@@ -406,7 +420,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               <!-- Foundational Track Card -->
-              <div class="card-flip h-[420px] reveal-left">
+              <div class="card-flip h-[420px] reveal-left" tabindex="0" role="button" aria-pressed="false">
                 <div class="card-flip-inner">
                   <!-- Front -->
                   <div class="card-front bg-white/5 backdrop-blur-xl border border-white/10 shadow-lg shadow-black/20 p-8 flex flex-col justify-center items-center text-center">
@@ -417,7 +431,8 @@
                     </div>
                     <h3 class="text-4xl font-bold text-white mb-2">Foundational</h3>
                     <p class="text-lg text-red-400 font-semibold">Pre-CPTS 223 (or equivalent)</p>
-                    <p class="text-gray-400 mt-8 font-semibold animate-pulse">Hover to learn more</p>
+                    <p class="text-gray-400 mt-8 font-semibold animate-pulse hover-text">Hover to learn more</p>
+                    <p class="text-gray-400 mt-8 font-semibold animate-pulse tap-text">Tap to learn more</p>
                   </div>
                   <!-- Back -->
                   <div class="card-back bg-white/10 backdrop-blur-xl border border-white/10 shadow-lg shadow-black/20 p-6 overflow-y-auto">
@@ -444,7 +459,7 @@
               </div>
 
               <!-- Advanced Track Card -->
-              <div class="card-flip h-[420px] reveal-right">
+              <div class="card-flip h-[420px] reveal-right" tabindex="0" role="button" aria-pressed="false">
                   <div class="card-flip-inner">
                     <!-- Front -->
                     <div class="card-front bg-white/5 backdrop-blur-xl border border-white/10 shadow-lg shadow-black/20 p-8 flex flex-col justify-center items-center text-center">
@@ -455,7 +470,8 @@
                       </div>
                       <h3 class="text-4xl font-bold text-white mb-2">Advanced</h3>
                       <p class="text-lg text-red-400 font-semibold">CPTS 223+ (or equivalent)</p>
-                      <p class="text-gray-400 mt-8 font-semibold animate-pulse">Hover to learn more</p>
+                      <p class="text-gray-400 mt-8 font-semibold animate-pulse hover-text">Hover to learn more</p>
+                      <p class="text-gray-400 mt-8 font-semibold animate-pulse tap-text">Tap to learn more</p>
                     </div>
                     <!-- Back -->
                     <div class="card-back bg-white/10 backdrop-blur-xl border border-white/10 shadow-lg shadow-black/20 p-6 overflow-y-auto">
@@ -1010,6 +1026,22 @@
             });
         }
         
+        // Card Flip for touch/click
+        const flipCards = document.querySelectorAll('.card-flip');
+        flipCards.forEach(card => {
+            const flipCard = () => {
+              const isFlipped = card.classList.toggle('is-flipped');
+              card.setAttribute('aria-pressed', isFlipped);
+            }
+            card.addEventListener('click', flipCard);
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    flipCard();
+                }
+            });
+        });
+
         // Update copyright year
         const copyrightEl = document.getElementById('copyright-text');
         if(copyrightEl) copyrightEl.innerHTML = `&copy; ${new Date().getFullYear()} WSU Association of Computing Machinery. All rights reserved.`;
