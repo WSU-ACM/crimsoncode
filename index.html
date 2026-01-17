@@ -228,6 +228,11 @@
         pointer-events: none;
       }
 
+      /* Sponsor specific styles */
+      .sponsor-card {
+        @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl flex flex-col items-center justify-center;
+      }
+
       @media (max-width: 1023px) {
         #mlh-trust-badge {
           display: none !important;
@@ -595,19 +600,63 @@
         <!-- Sponsors Section -->
         <section id="sponsors" class="py-20">
           <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
+            <div class="text-center mb-16">
               <h2 class="text-4xl font-bold mb-4 reveal">Our Sponsors</h2>
-              <p class="text-lg text-gray-400 max-w-3xl mx-auto reveal reveal-delay-1">We're currently finalizing our amazing partners for 2026. Stay tuned for the full list!</p>
+              <p class="text-lg text-gray-400 max-w-3xl mx-auto reveal reveal-delay-1">
+                CrimsonCode is made possible by the generous support of our industry partners.
+              </p>
             </div>
             
-            <div class="max-w-3xl mx-auto text-center reveal">
-              <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg shadow-black/20 p-8 md:p-12">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-red-400 mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                </svg>
-                <h3 class="text-3xl font-bold text-white mb-4">Sponsor Lineup Coming Soon</h3>
-                <p class="text-gray-300 mb-8 text-lg">We are incredibly grateful for the support of our partners. The official list of sponsors who make CrimsonCode possible will be revealed here shortly.</p>
-                <a href="mailto:acm.vcea@wsu.edu" class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold text-lg py-4 px-10 rounded-lg shadow-lg shadow-red-500/30 transition-all duration-300 ease-in-out transform hover:scale-110 hover:-translate-y-1 hover:shadow-xl hover:shadow-red-500/50">Become a Sponsor</a>
+            <div class="max-w-6xl mx-auto space-y-12">
+              <!-- Tier 1: Main Sponsor -->
+              <div class="reveal">
+                <div class="sponsor-card h-50 md:h-70 w-full max-w-4xl mx-auto relative overflow-hidden">
+                   <div class="flex flex-col items-center">
+                    <img src="https://i.postimg.cc/cLctBTTD/sel-logo-white.png" alt="SEL Logo" class="max-w-full h-auto max-h-32 md:max-h-64 drop-shadow-xl" />
+                   </div>
+                </div>
+              </div>
+
+              <!-- Tier 2: Semi-Big Sponsor -->
+              <div class="reveal reveal-delay-1">
+                <div class="sponsor-card h-50 md:h-70 w-full max-w-2xl mx-auto relative overflow-hidden">
+                  <div class="flex flex-col items-center">
+                    <img src="https://i.postimg.cc/x8WZpzD7/gesa-logo-white.png" alt="GESA Logo" class="max-w-full h-auto max-h-32 md:max-h-48 drop-shadow-xl" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tier 3: Medium Sponsors -->
+              <div class="reveal reveal-delay-2 pl-12 ">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                  
+                  <div class="sponsor-card h-40 flex items-center justify-center">
+                    <img src="https://i.postimg.cc/xTHkxJWs/ASWSU-copy.png" alt="ASWSU Logo" class="max-w-full h-auto max-h-24 md:max-h-32 drop-shadow-xl" />
+                  </div>
+
+                  <div class="sponsor-card h-40 flex items-center justify-center max-w-xs mx-auto w-full">
+                    <img src="https://i.postimg.cc/ZR7YnZX8/rha-white.png" alt="RHA Logo" class="max-w-full h-auto max-h-24 md:max-h-32 drop-shadow-xl" />
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Tier 4: Small Sponsors -->
+              <div class="reveal reveal-delay-3">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                  <div class="sponsor-card h-32 flex items-center justify-center">
+                    <img src="https://i.postimg.cc/X7D28h6t/Monsterwhite.png" alt="Monster Logo" class="max-w-full h-auto max-h-20" />
+                  </div>
+                  <div class="sponsor-card h-32 flex items-center justify-center">
+                    <img src="https://i.postimg.cc/W1CH2y9g/Kamiak-white.png" alt="Kamiak Logo" class="max-w-full h-auto max-h-20" />
+                  </div>
+                  <div class="sponsor-card h-32 flex items-center justify-center">
+                    <img src="https://i.postimg.cc/SNHXVNXG/wsecu-logo-white.png" alt="WSECU Logo" class="max-w-full h-auto max-h-16" />
+                  </div>
+                  <div class="sponsor-card h-32 p-10 flex items-center justify-center">
+                    <img src="https://i.postimg.cc/sgTwXNwS/purebutton.png" alt="Pure Buttons Logo" class="max-w-full h-auto max-h-16" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
