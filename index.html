@@ -290,8 +290,8 @@
             <a href="#sponsors" class="text-gray-300 hover:text-white transition-colors duration-300 text-xl font-medium">Sponsors</a>
             <a href="#schedule" class="text-gray-300 hover:text-white transition-colors duration-300 text-xl font-medium">Schedule</a>
           </nav>
-          <a href="https://events.mlh.io/events/13325-crimsoncode-hackathon-2026" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold text-lg py-3 px-8 rounded-lg transition-all duration-300 shadow-lg shadow-red-500/20 transform hover:-translate-y-0.5 ml-10">
-            Register Now
+          <a href="https://crimsoncode-2026.devpost.com/" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold text-lg py-3 px-8 rounded-lg transition-all duration-300 shadow-lg shadow-red-500/20 transform hover:-translate-y-0.5 ml-10">
+            View Projects
           </a>
         </div>
       </div>
@@ -303,8 +303,8 @@
           <a href="#faq" class="text-gray-300 hover:text-white transition-colors duration-300 text-xl font-medium">FAQ</a>
           <a href="#sponsors" class="text-gray-300 hover:text-white transition-colors duration-300 text-xl font-medium">Sponsors</a>
           <a href="#schedule" class="text-gray-300 hover:text-white transition-colors duration-300 text-xl font-medium">Schedule</a>
-          <a href="https://events.mlh.io/events/13325-crimsoncode-hackathon-2026" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold text-xl py-3 px-8 rounded-lg transition-all duration-300 w-auto text-center mt-4">
-            Register Now
+          <a href="https://crimsoncode-2026.devpost.com/" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold text-xl py-3 px-8 rounded-lg transition-all duration-300 w-auto text-center mt-4">
+            View Projects
           </a>
         </nav>
       </div>
@@ -333,35 +333,21 @@
             <span class="text-white" id="hackathon-year">&nbsp;2026</span>
           </h1>
           <div class="flex items-center justify-center gap-4 text-xl md:text-2xl text-gray-300 font-semibold mb-6 reveal reveal-delay-1">
-            <span>February 21-22, 2026 &bull; Pullman, WA</span>
+            <span>Thank you for an amazing event! &bull; See you in 2027</span>
           </div>
           
-          <!-- Countdown Timer -->
-          <div id="countdown-timer" class="flex justify-center space-x-4 md:space-x-8 my-8 text-white reveal reveal-delay-2">
-            <div>
-              <span id="days" class="text-4xl md:text-5xl font-bold tabular-nums">00</span>
-              <p class="text-sm text-gray-300 uppercase tracking-widest">Days</p>
-            </div>
-            <div>
-              <span id="hours" class="text-4xl md:text-5xl font-bold tabular-nums">00</span>
-              <p class="text-sm text-gray-300 uppercase tracking-widest">Hours</p>
-            </div>
-            <div>
-              <span id="minutes" class="text-4xl md:text-5xl font-bold tabular-nums">00</span>
-              <p class="text-sm text-gray-300 uppercase tracking-widest">Minutes</p>
-            </div>
-            <div>
-              <span id="seconds" class="text-4xl md:text-5xl font-bold tabular-nums">00</span>
-              <p class="text-sm text-gray-300 uppercase tracking-widest">Seconds</p>
-            </div>
+          <!-- Countdown Timer replaced with Thank You -->
+          <div class="my-8 reveal reveal-delay-2">
+            <h2 class="text-3xl md:text-4xl font-bold text-red-500">Event Concluded</h2>
+            <p class="text-gray-300 mt-2">February 21-22, 2026</p>
           </div>
           
           <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto reveal reveal-delay-3">
             A 24-hour hackathon hosted by the Association for Computing Machinery (ACM) at Washington State University.
           </p>
           <div class="reveal reveal-delay-4">
-            <a href="https://events.mlh.io/events/13325-crimsoncode-hackathon-2026" target="_blank" rel="noopener noreferrer" class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold text-lg py-4 px-10 rounded-lg shadow-lg shadow-red-500/30 transition-all duration-300 transform hover:scale-105">
-              Register Now
+            <a href="https://crimsoncode-2026.devpost.com/" target="_blank" rel="noopener noreferrer" class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold text-lg py-4 px-10 rounded-lg shadow-lg shadow-red-500/30 transition-all duration-300 transform hover:scale-105">
+              View Projects on Devpost
             </a>
           </div>
         </div>
@@ -673,7 +659,7 @@
           <div class="container mx-auto px-6">
             <div class="text-center mb-12">
               <h2 class="text-4xl font-bold reveal">Event Schedule</h2>
-              <p class="text-lg text-gray-400 max-w-3xl mx-auto reveal reveal-delay-1">Check out the official schedule for CrimsonCode 2026. Times are subject to change.</p>
+              <p class="text-lg text-gray-400 max-w-3xl mx-auto reveal reveal-delay-1">The hackathon has concluded. Thank you to all our participants and sponsors!</p>
             </div>
             <div class="relative max-w-6xl mx-auto">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -996,40 +982,6 @@
               slides[currentSlide].classList.add('opacity-100');
             }, 5000);
         }
-
-        // Countdown Timer
-        const countdownDate = new Date("2026-02-21T09:00:00").getTime();
-        const countdownElement = document.getElementById('countdown-timer');
-
-        const updateCountdown = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = countdownDate - now;
-
-            if (distance < 0) {
-                clearInterval(updateCountdown);
-                if(countdownElement) {
-                    countdownElement.innerHTML = `<p class="text-3xl font-bold text-red-400">The Hackathon has begun!</p>`;
-                    countdownElement.classList.add('visible');
-                }
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            const daysEl = document.getElementById('days');
-            const hoursEl = document.getElementById('hours');
-            const minutesEl = document.getElementById('minutes');
-            const secondsEl = document.getElementById('seconds');
-
-            if(daysEl) daysEl.innerText = days.toString().padStart(2, '0');
-            if(hoursEl) hoursEl.innerText = hours.toString().padStart(2, '0');
-            if(minutesEl) minutesEl.innerText = minutes.toString().padStart(2, '0');
-            if(secondsEl) secondsEl.innerText = seconds.toString().padStart(2, '0');
-        }, 1000);
-
         // --- INTERACTIVITY ---
 
         // Mobile menu toggle
