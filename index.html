@@ -2,9 +2,9 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CrimsonCode Hackathon 2026</title>
+    <title>CrimsonCode: Hacktoberfest 2026</title>
+    <meta name="description" content="CrimsonCode: Hacktoberfest is a free, one-day open-source hackathon for high school and university students at Washington State University on October 17, 2026." />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,46 +112,6 @@
         }
       }
 
-      /* Card Flip styles */
-      .card-flip {
-        perspective: 1500px;
-        cursor: pointer;
-      }
-      .card-flip-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-      }
-      .card-flip:hover .card-flip-inner,
-      .card-flip.is-flipped .card-flip-inner {
-        transform: rotateY(180deg);
-      }
-      .card-front, .card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        border-radius: 1rem; /* match rounded-2xl */
-      }
-
-      .card-front {
-        transform: rotateY(0deg);
-      }
-
-      .card-back {
-        transform: rotateY(180deg);
-      }
-
-      /* For tap vs hover prompt text */
-      .tap-text { display: none; }
-      @media (hover: none) {
-        .hover-text { display: none; }
-        .tap-text { display: block; }
-      }
-      
       /* Glassmorphism Background */
       #background-aurora {
         pointer-events: none;
@@ -233,12 +193,7 @@
         pointer-events: none;
       }
 
-      /* Sponsor specific styles */
-      .sponsor-card {
-        @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl flex flex-col items-center justify-center;
-      }
-
-      @media (max-width: 1023px) {
+      @media (max-width: 1279px) {
         #mlh-trust-badge {
           display: none !important;
         }
@@ -253,8 +208,8 @@
 }
 </script>
 </head>
-<a id="mlh-trust-badge" style="display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000" href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=red" target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-red.svg" alt="Major League Hacking 2026 Hackathon Season" style="width:100%"></a>
   <body class="text-white">
+    <a id="mlh-trust-badge" style="display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000" href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2027-season&utm_content=red" target="_blank" rel="noopener noreferrer"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/2027/mlh-trust-badge-2027-red.svg" alt="Major League Hacking 2027 Hackathon Season" style="width:100%"></a>
     <div id="background-aurora" class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden">
       <div class="blob one"></div>
       <div class="blob two"></div>
@@ -263,11 +218,11 @@
 
     <!-- Header -->
     <header id="main-header" class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 bg-black/30 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl shadow-black/50 transition-all duration-500 ease-in-out">
-      <div class="px-8 py-5 flex justify-between items-center">
+      <div class="px-8 xl:pr-32 py-5 flex justify-between items-center">
         <!-- Left Side: Hamburger (mobile) + Logo -->
         <div class="flex items-center gap-4">
           <div class="lg:hidden">
-            <button id="menu-btn" class="text-white focus:outline-none">
+            <button id="menu-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" class="text-white focus:outline-none">
               <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
               </svg>
@@ -283,29 +238,27 @@
         
         <!-- Right Side: Nav links + Register button (desktop) -->
         <div class="hidden lg:flex items-center">
-          <nav class="flex items-center space-x-10">
+          <nav class="flex items-center space-x-6">
             <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300 text-xl font-medium">About</a>
-            <a href="#tracks" class="text-gray-300 hover:text-white transition-colors duration-300 text-xl font-medium">Tracks</a>
+            <a href="#challenge" class="text-gray-300 hover:text-white transition-colors duration-300 text-xl font-medium">Challenge</a>
             <a href="#faq" class="text-gray-300 hover:text-white transition-colors duration-300 text-xl font-medium">FAQ</a>
-            <a href="#sponsors" class="text-gray-300 hover:text-white transition-colors duration-300 text-xl font-medium">Sponsors</a>
             <a href="#schedule" class="text-gray-300 hover:text-white transition-colors duration-300 text-xl font-medium">Schedule</a>
           </nav>
-          <a href="https://crimsoncode-2026.devpost.com/" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold text-lg py-3 px-8 rounded-lg transition-all duration-300 shadow-lg shadow-red-500/20 transform hover:-translate-y-0.5 ml-10">
-            View Projects
-          </a>
+          <span aria-disabled="true" class="bg-red-600/70 text-white font-bold text-base py-3 px-6 rounded-lg shadow-lg shadow-red-500/20 ml-6 whitespace-nowrap cursor-default">
+            Registration Coming Soon
+          </span>
         </div>
       </div>
       
       <div id="mobile-menu" class="hidden lg:hidden bg-black/80 backdrop-blur-xl rounded-b-2xl border-t border-white/10">
         <nav class="flex flex-col items-center space-y-6 py-8">
           <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300 text-xl font-medium">About</a>
-          <a href="#tracks" class="text-gray-300 hover:text-white transition-colors duration-300 text-xl font-medium">Tracks</a>
+          <a href="#challenge" class="text-gray-300 hover:text-white transition-colors duration-300 text-xl font-medium">Challenge</a>
           <a href="#faq" class="text-gray-300 hover:text-white transition-colors duration-300 text-xl font-medium">FAQ</a>
-          <a href="#sponsors" class="text-gray-300 hover:text-white transition-colors duration-300 text-xl font-medium">Sponsors</a>
           <a href="#schedule" class="text-gray-300 hover:text-white transition-colors duration-300 text-xl font-medium">Schedule</a>
-          <a href="https://crimsoncode-2026.devpost.com/" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold text-xl py-3 px-8 rounded-lg transition-all duration-300 w-auto text-center mt-4">
-            View Projects
-          </a>
+          <span aria-disabled="true" class="bg-red-600/70 text-white font-bold text-xl py-3 px-8 rounded-lg w-auto text-center mt-4 cursor-default">
+            Registration Coming Soon
+          </span>
         </nav>
       </div>
     </header>
@@ -326,29 +279,30 @@
         </div>
 
         <div id="hero-content" class="relative z-10 container mx-auto px-6" style="transition: opacity 300ms ease-out, transform 300ms ease-out;">
-          <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-4 reveal">
-            <span class="shimmer-title">
+          <h1 class="font-extrabold mb-4 reveal">
+            <span class="block text-5xl md:text-7xl lg:text-8xl shimmer-title">
               CrimsonCode
             </span>
-            <span class="text-white" id="hackathon-year">&nbsp;2026</span>
+            <span class="block mt-3 text-3xl md:text-5xl lg:text-6xl text-white">
+              Hacktoberfest<span id="hackathon-year">&nbsp;2026</span>
+            </span>
           </h1>
           <div class="flex items-center justify-center gap-4 text-xl md:text-2xl text-gray-300 font-semibold mb-6 reveal reveal-delay-1">
-            <span>Thank you for an amazing event! &bull; See you in 2027</span>
+            <span>October 17, 2026 &bull; 11:30 AM&ndash;7:00 PM &bull; WSU Pullman</span>
           </div>
           
-          <!-- Countdown Timer replaced with Thank You -->
           <div class="my-8 reveal reveal-delay-2">
-            <h2 class="text-3xl md:text-4xl font-bold text-red-500">Event Concluded</h2>
-            <p class="text-gray-300 mt-2">February 21-22, 2026</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-red-500">One Day. Six Hours. Open Source.</h2>
+            <p class="text-gray-300 mt-2">Free for high school and university students</p>
           </div>
           
           <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto reveal reveal-delay-3">
-            A 24-hour hackathon hosted by the Association for Computing Machinery (ACM) at Washington State University.
+            Team up for a creative open-source challenge at a focused Hacktoberfest event hosted by ACM at Washington State University.
           </p>
           <div class="reveal reveal-delay-4">
-            <a href="https://crimsoncode-2026.devpost.com/" target="_blank" rel="noopener noreferrer" class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold text-lg py-4 px-10 rounded-lg shadow-lg shadow-red-500/30 transition-all duration-300 transform hover:scale-105">
-              View Projects on Devpost
-            </a>
+            <span aria-disabled="true" class="inline-block bg-red-600/70 text-white font-bold text-lg py-4 px-10 rounded-lg shadow-lg shadow-red-500/30 cursor-default">
+              Registration Coming Soon
+            </span>
           </div>
         </div>
         
@@ -372,118 +326,61 @@
             <div class="text-center mb-12">
               <h2 class="text-4xl font-bold mb-4 reveal">Innovate. Collaborate. Create.</h2>
               <p class="text-lg text-gray-400 max-w-3xl mx-auto reveal reveal-delay-1">
-                CrimsonCode is Washington State University's premier 24-hour hackathon. We bring together hundreds of students from across the country to build amazing projects, learn new skills, and connect with industry leaders. Whether you're a first-time hacker or a seasoned pro, CrimsonCode is the place to turn your ideas into reality.
+                CrimsonCode: Hacktoberfest is a free, one-day hackathon where high school and university students take on a surprise open-source challenge. Whether this is your first hackathon or you are an experienced developer, you can join a team, create something memorable, and compete for prizes.
               </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg shadow-black/20 p-6 text-center flex flex-col items-center reveal transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/10 hover:border-red-500/50 hover:shadow-red-500/20">
                 <div class="text-red-500 mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
-                <h3 class="text-3xl font-bold text-white">24 Hours</h3>
-                <p class="text-gray-400">Non-stop hacking</p>
+                <h3 class="text-3xl font-bold text-white">6 Hours</h3>
+                <p class="text-gray-400">Focused programming</p>
               </div>
               <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg shadow-black/20 p-6 text-center flex flex-col items-center reveal reveal-delay-1 transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/10 hover:border-red-500/50 hover:shadow-red-500/20">
                 <div class="text-red-500 mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div>
-                <h3 class="text-3xl font-bold text-white">250+</h3>
-                <p class="text-gray-400">Hackers & Creators</p>
+                <h3 class="text-3xl font-bold text-white">1&ndash;4</h3>
+                <p class="text-gray-400">People per team</p>
               </div>
               <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg shadow-black/20 p-6 text-center flex flex-col items-center reveal reveal-delay-2 transition-all duration-300 ease-in-out hover:scale-105 hover:bg-white/10 hover:border-red-500/50 hover:shadow-red-500/20">
                 <div class="text-red-500 mb-0 mt-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5q0 .807-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935m10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935M3.504 1q.01.775.056 1.469c.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.5.5 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864.413-1.12.74-2.64.87-4.667q.045-.694.056-1.469z"></path></svg></div>
-                <h3 class="text-3xl font-bold text-white">$2,500+</h3>
-                <p class="text-gray-400">In prizes & awards</p>
+                <h3 class="text-3xl font-bold text-white">Prizes</h3>
+                <p class="text-gray-400">For standout projects</p>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- Tracks Section -->
-        <section id="tracks" class="py-20">
+        <!-- Challenge Section -->
+        <section id="challenge" class="py-20">
           <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-              <h2 class="text-4xl font-bold mb-4 reveal">Choose Your Track</h2>
+              <h2 class="text-4xl font-bold mb-4 reveal">The Open-Source Challenge</h2>
               <p class="text-lg text-gray-400 max-w-3xl mx-auto reveal reveal-delay-1">
-                Whether you're just starting out or you're a seasoned coder, we have a path designed for you to succeed.
+                One challenge, one community, and one level playing field. The full prompt will be revealed when programming begins.
               </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              <!-- Foundational Track Card -->
-              <div class="card-flip h-[420px] reveal-left" tabindex="0" role="button" aria-pressed="false">
-                <div class="card-flip-inner">
-                  <!-- Front -->
-                  <div class="card-front bg-white/5 backdrop-blur-xl border border-white/10 shadow-lg shadow-black/20 p-8 flex flex-col justify-center items-center text-center">
-                    <div class="p-4 bg-red-500/20 rounded-full mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
-                        </svg>
-                    </div>
-                    <h3 class="text-4xl font-bold text-white mb-2">Foundational</h3>
-                    <p class="text-lg text-red-400 font-semibold">Pre-CPTS 223 (or equivalent)</p>
-                    <p class="text-gray-400 mt-8 font-semibold animate-pulse hover-text">Hover to learn more</p>
-                    <p class="text-gray-400 mt-8 font-semibold animate-pulse tap-text">Tap to learn more</p>
+            <div class="max-w-5xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg shadow-black/20 p-8 md:p-12 reveal">
+              <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+                <div class="shrink-0 p-5 bg-red-500/20 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-3xl font-bold text-white mb-3 text-center md:text-left">A Challenge Worth Waiting For</h3>
+                  <p class="text-gray-300 text-lg mb-6">
+                    The challenge prompt and competition rules will be unveiled at kickoff. Bring your curiosity, creativity, and favorite development tools. Everyone will have the same six-hour window to turn the surprise prompt into something memorable.
+                  </p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-300">
+                    <div class="flex items-start"><span class="text-red-500 mr-3 mt-1">&#10003;</span><span>One shared challenge for every experience level</span></div>
+                    <div class="flex items-start"><span class="text-red-500 mr-3 mt-1">&#10003;</span><span>Teams of one to four students</span></div>
+                    <div class="flex items-start"><span class="text-red-500 mr-3 mt-1">&#10003;</span><span>Team formation available at check-in</span></div>
+                    <div class="flex items-start"><span class="text-red-500 mr-3 mt-1">&#10003;</span><span>Prizes for standout projects</span></div>
                   </div>
-                  <!-- Back -->
-                  <div class="card-back bg-white/10 backdrop-blur-xl border border-white/10 shadow-lg shadow-black/20 p-6 overflow-y-auto">
-                    <div class="flex items-center mb-3">
-                      <div class="p-2 bg-red-500/20 rounded-full mr-3">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" /></svg>
-                      </div>
-                      <div>
-                        <h3 class="text-xl font-bold text-white">Foundational Track</h3>
-                        <p class="text-sm text-red-400 font-semibold">Pre-CPTS 223 (or equivalent)</p>
-                      </div>
-                    </div>
-                    <p class="text-gray-300 mb-4 text-sm">
-                      Perfect for those who haven't taken an advanced data structures course (like CPTS 223). This track helps you learn fundamentals, build your first project, and connect with mentors. No prior hackathon experience is needed—just a willingness to learn.
-                    </p>
-                    <ul class="space-y-2 text-gray-300 text-sm">
-                      <li class="flex items-start"><span class="text-red-500 mr-2 mt-1">&#10003;</span><span>Compete for prizes against people similar to you in terms of proficiency.</span></li>
-                      <li class="flex items-start"><span class="text-red-500 mr-2 mt-1">&#10003;</span><span>Dedicated mentors to help you get started and overcome challenges.</span></li>
-                      <li class="flex items-start"><span class="text-red-500 mr-2 mt-1">&#10003;</span><span>Network with sponsors' senior engineers and recruiters.</span></li>
-                      <li class="flex items-start"><span class="text-red-500 mr-2 mt-1">&#10003;</span><span>A welcoming environment focused on collaboration and learning.</span></li>
-                    </ul>
-                  </div>
+                  <p class="text-sm text-gray-400 mt-6">No competition work may begin before the prompt is revealed. Full details will be provided at the event.</p>
                 </div>
               </div>
-
-              <!-- Advanced Track Card -->
-              <div class="card-flip h-[420px] reveal-right" tabindex="0" role="button" aria-pressed="false">
-                  <div class="card-flip-inner">
-                    <!-- Front -->
-                    <div class="card-front bg-white/5 backdrop-blur-xl border border-white/10 shadow-lg shadow-black/20 p-8 flex flex-col justify-center items-center text-center">
-                      <div class="p-4 bg-red-500/20 rounded-full mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                        </svg>
-                      </div>
-                      <h3 class="text-4xl font-bold text-white mb-2">Advanced</h3>
-                      <p class="text-lg text-red-400 font-semibold">CPTS 223+ (or equivalent)</p>
-                      <p class="text-gray-400 mt-8 font-semibold animate-pulse hover-text">Hover to learn more</p>
-                      <p class="text-gray-400 mt-8 font-semibold animate-pulse tap-text">Tap to learn more</p>
-                    </div>
-                    <!-- Back -->
-                    <div class="card-back bg-white/10 backdrop-blur-xl border border-white/10 shadow-lg shadow-black/20 p-6 overflow-y-auto">
-                      <div class="flex items-center mb-3">
-                          <div class="p-2 bg-red-500/20 rounded-full mr-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
-                          </div>
-                          <div>
-                            <h3 class="text-xl font-bold text-white">Advanced Track</h3>
-                            <p class="text-sm text-red-400 font-semibold">CPTS 223+ (or equivalent)</p>
-                          </div>
-                      </div>
-                      <p class="text-gray-300 mb-4 text-sm">
-                          For students who have completed an advanced data structures course (like CPTS 223). This track is for experienced hackers who want to tackle complex challenges, utilize cutting-edge technology, and compete for the grand prize.
-                      </p>
-                      <ul class="space-y-2 text-gray-300 text-sm">
-                        <li class="flex items-start"><span class="text-red-500 mr-2 mt-1">&#10003;</span><span>Tackle challenging prompts with advanced APIs and datasets.</span></li>
-                        <li class="flex items-start"><span class="text-red-500 mr-2 mt-1">&#10003;</span><span>Network with sponsors' senior engineers and recruiters.</span></li>
-                        <li class="flex items-start"><span class="text-red-500 mr-2 mt-1">&#10003;</span><span>Utilize more advanced tools like WSU's supercomputers.</span></li>
-                      </ul>
-                    </div>
-                  </div>
-              </div>
-
             </div>
           </div>
         </section>
@@ -502,7 +399,7 @@
                   <span class="transform transition-transform duration-300"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
                 </button>
                 <div class="faq-answer overflow-hidden max-h-0">
-                  <p class="text-gray-300 pb-5 px-6">A hackathon is a 24-hour sprint-like event where computer programmers and others involved in software development, including graphic designers, interface designers, project managers, and others, collaborate intensively on software projects and present their projects to judges at the end of the 24 hours to compete for prizes.</p>
+                  <p class="text-gray-300 pb-5 px-6">A hackathon is a focused event where people collaborate on technical projects and share their work at the end. At CrimsonCode: Hacktoberfest, teams have six hours to take on a surprise open-source challenge and compete for prizes.</p>
                 </div>
               </div>
                <!-- FAQ Item 2 -->
@@ -512,7 +409,7 @@
                     <span class="transform transition-transform duration-300"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
                   </button>
                   <div class="faq-answer overflow-hidden max-h-0">
-                    <p class="text-gray-300 pb-5 px-6">Any current university student, from any major, is welcome to attend! Whether you're a seasoned coder or a complete beginner, there's a place for you at CrimsonCode. We also welcome high school students! (Note: If you're a high school student, you will still be placed in the foundational track with other freshmen and sophomores.)</p>
+                     <p class="text-gray-300 pb-5 px-6">Any current high school or university student is welcome, regardless of major or experience level. First-time hackers and experienced developers will compete in the same open-source challenge.</p>
                   </div>
                 </div>
               <!-- FAQ Item 3 -->
@@ -522,7 +419,7 @@
                     <span class="transform transition-transform duration-300"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
                   </button>
                   <div class="faq-answer overflow-hidden max-h-0">
-                    <p class="text-gray-300 pb-5 px-6">Yes! Thanks to our amazing sponsors, attendance, food, drinks, and swag are all completely free for accepted hackers.</p>
+                     <p class="text-gray-300 pb-5 px-6">Yes. Attendance is completely free, and participants will receive event swag.</p>
                   </div>
               </div>
               <!-- FAQ Item 4 -->
@@ -532,7 +429,7 @@
                     <span class="transform transition-transform duration-300"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
                   </button>
                   <div class="faq-answer overflow-hidden max-h-0">
-                    <p class="text-gray-300 pb-5 px-6">No problem! We'll have dedicated team formation events at the beginning of the hackathon. You can also connect with other hackers on our Discord server beforehand.</p>
+                     <p class="text-gray-300 pb-5 px-6">No problem! You can compete on your own, join team formation at check-in, or connect with other participants on our Discord server beforehand.</p>
                   </div>
               </div>
               <!-- FAQ Item 5 -->
@@ -542,7 +439,7 @@
                     <span class="transform transition-transform duration-300"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
                   </button>
                   <div class="faq-answer overflow-hidden max-h-0">
-                    <p class="text-gray-300 pb-5 px-6">You'll need your laptop, chargers, a backpack, and any other hardware you plan to use. We also recommend a sleeping bag and toiletries for comfort.</p>
+                     <p class="text-gray-300 pb-5 px-6">Bring your laptop, charger, and anything else you need for development. This is a daytime event, so no overnight supplies are necessary.</p>
                   </div>
               </div>
               <!-- FAQ Item 6 -->
@@ -568,86 +465,41 @@
               <!-- FAQ Item 8 -->
               <div class="border-b border-white/10">
                 <button class="faq-question w-full flex justify-between items-center text-left py-5 px-6">
-                  <h3 class="text-lg font-semibold text-white">Can I work on a past project?</h3>
+                  <h3 class="text-lg font-semibold text-white">Can I start working before the event?</h3>
                   <span class="transform transition-transform duration-300"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
                 </button>
                 <div class="faq-answer overflow-hidden max-h-0">
-                  <p class="text-gray-300 pb-5 px-6">All projects must be started from scratch at the event. You cannot work on, copy, or iterate on past projects. Using your own pre-built APIs, libraries, or third-party services is allowed and encouraged!</p>
+                   <p class="text-gray-300 pb-5 px-6">No. The challenge prompt will be revealed at kickoff, and all competition work must be completed during the six-hour programming window. This ensures every team starts on equal footing.</p>
                 </div>
               </div>
               <!-- FAQ Item 9 -->
-              <div class="border-0">
+              <div class="border-b border-white/10">
                 <button class="faq-question w-full flex justify-between items-center text-left py-5 px-6">
                   <h3 class="text-lg font-semibold text-white">Is CrimsonCode in-person only?</h3>
                   <span class="transform transition-transform duration-300"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
                 </button>
                 <div class="faq-answer overflow-hidden max-h-0">
-                  <p class="text-gray-300 pb-5 px-6">Yes, CrimsonCode 2026 is an in-person only event held on the Washington State University campus in Pullman, WA. We believe the best hackathon experience comes from the energy and collaboration of being together in one physical space!</p>
+                   <p class="text-gray-300 pb-5 px-6">Yes. CrimsonCode: Hacktoberfest is an in-person event at Washington State University in Pullman, WA. The building and room will be announced soon.</p>
+                 </div>
+               </div>
+              <!-- FAQ Item 10 -->
+              <div class="border-b border-white/10">
+                <button class="faq-question w-full flex justify-between items-center text-left py-5 px-6">
+                  <h3 class="text-lg font-semibold text-white">What is Hacktoberfest?</h3>
+                  <span class="transform transition-transform duration-300"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                </button>
+                <div class="faq-answer overflow-hidden max-h-0">
+                  <p class="text-gray-300 pb-5 px-6">Hacktoberfest is an annual celebration of open source that encourages people to learn, collaborate, and contribute to projects used by communities around the world.</p>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Sponsors Section -->
-        <section id="sponsors" class="py-20">
-          <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-              <h2 class="text-4xl font-bold mb-4 reveal">Our Sponsors</h2>
-              <p class="text-lg text-gray-400 max-w-3xl mx-auto reveal reveal-delay-1">
-                CrimsonCode is made possible by the generous support of our industry partners.
-              </p>
-            </div>
-            
-            <div class="max-w-6xl mx-auto space-y-12">
-              <!-- Tier 1: Main Sponsor -->
-              <div class="reveal">
-                <div class="sponsor-card h-50 md:h-70 w-full max-w-4xl mx-auto relative overflow-hidden">
-                   <div class="flex flex-col items-center">
-                    <img src="https://i.postimg.cc/cLctBTTD/sel-logo-white.png" alt="SEL Logo" class="max-w-full h-auto max-h-32 md:max-h-64 drop-shadow-xl" />
-                   </div>
-                </div>
-              </div>
-
-              <!-- Tier 2: Semi-Big Sponsor -->
-              <div class="reveal reveal-delay-1">
-                <div class="sponsor-card h-50 md:h-70 w-full max-w-2xl mx-auto relative overflow-hidden">
-                  <div class="flex flex-col items-center">
-                    <img src="https://i.postimg.cc/x8WZpzD7/gesa-logo-white.png" alt="GESA Logo" class="max-w-full h-auto max-h-32 md:max-h-48 drop-shadow-xl" />
-                  </div>
-                </div>
-              </div>
-
-              <!-- Tier 3: Medium Sponsors -->
-              <div class="reveal reveal-delay-2 pl-12 ">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                  
-                  <div class="sponsor-card h-40 flex items-center justify-center">
-                    <img src="https://i.postimg.cc/xTHkxJWs/ASWSU-copy.png" alt="ASWSU Logo" class="max-w-full h-auto max-h-24 md:max-h-32 drop-shadow-xl" />
-                  </div>
-
-                  <div class="sponsor-card h-40 flex items-center justify-center max-w-xs mx-auto w-full">
-                    <img src="https://i.postimg.cc/ZR7YnZX8/rha-white.png" alt="RHA Logo" class="max-w-full h-auto max-h-24 md:max-h-32 drop-shadow-xl" />
-                  </div>
-
-                </div>
-              </div>
-
-              <!-- Tier 4: Small Sponsors -->
-              <div class="reveal reveal-delay-3">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                  <div class="sponsor-card h-32 flex items-center justify-center">
-                    <img src="https://i.postimg.cc/X7D28h6t/Monsterwhite.png" alt="Monster Logo" class="max-w-full h-auto max-h-20" />
-                  </div>
-                  <div class="sponsor-card h-32 flex items-center justify-center">
-                    <img src="https://i.postimg.cc/W1CH2y9g/Kamiak-white.png" alt="Kamiak Logo" class="max-w-full h-auto max-h-20" />
-                  </div>
-                  <div class="sponsor-card h-32 flex items-center justify-center">
-                    <img src="https://i.postimg.cc/SNHXVNXG/wsecu-logo-white.png" alt="WSECU Logo" class="max-w-full h-auto max-h-16" />
-                  </div>
-                  <div class="sponsor-card h-32 p-10 flex items-center justify-center">
-                    <a href='https://mlh.link/MLH-PureButtons-hackathons' target='_blank'><img src="https://i.postimg.cc/sgTwXNwS/purebutton.png" alt="Pure Buttons Logo" class="max-w-full h-auto max-h-16" /></a>
-                  </div>
+              <!-- FAQ Item 11 -->
+              <div class="border-0">
+                <button class="faq-question w-full flex justify-between items-center text-left py-5 px-6">
+                  <h3 class="text-lg font-semibold text-white">What can I win?</h3>
+                  <span class="transform transition-transform duration-300"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                </button>
+                <div class="faq-answer overflow-hidden max-h-0">
+                  <p class="text-gray-300 pb-5 px-6">Prizes will be awarded for standout projects. Prize categories and award details will be announced soon.</p>
                 </div>
               </div>
             </div>
@@ -659,47 +511,22 @@
           <div class="container mx-auto px-6">
             <div class="text-center mb-12">
               <h2 class="text-4xl font-bold reveal">Event Schedule</h2>
-              <p class="text-lg text-gray-400 max-w-3xl mx-auto reveal reveal-delay-1">The hackathon has concluded. Thank you to all our participants and sponsors!</p>
+              <p class="text-lg text-gray-400 max-w-3xl mx-auto reveal reveal-delay-1">Saturday, October 17, 2026 &bull; 11:30 AM&ndash;7:00 PM. Times are subject to change.</p>
             </div>
-            <div class="relative max-w-6xl mx-auto">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Day 1 -->
-                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg shadow-black/20 p-8 reveal-left">
-                  <h3 class="text-3xl font-bold mb-2 text-white">Saturday</h3>
-                  <p class="text-lg text-gray-400 mb-8">February 21</p>
-                  <div class="space-y-8">
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">9:00 AM</p><h4 class="font-bold text-white text-lg mt-1">Doors Open & Check-in</h4><p class="text-gray-400 mt-1">Meet the sponsors at their tables and get your free swag!</p></div>
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">10:00 AM</p><h4 class="font-bold text-white text-lg mt-1">Opening Ceremony</h4><p class="text-gray-400 mt-1">Keynote by SEL, GESA, and MLH introductions.</p></div>
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">11:00 AM</p><h4 class="font-bold text-white text-lg mt-1">Hacking Officially Begins</h4><p class="text-gray-400 mt-1">Team forming and project kick-off.</p></div>
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">11:30 AM</p><h4 class="font-bold text-white text-lg mt-1">GitHub Workshop</h4><p class="text-gray-400 mt-1">Learn the basics of GitHub to start your project off strong!</p></div>
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">12:30 PM</p><h4 class="font-bold text-white text-lg mt-1">Lunch: Domino's</h4><p class="text-gray-400 mt-1">Start off with some pizza!</p></div>
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">1:00 PM</p><h4 class="font-bold text-white text-lg mt-1">GESA Talk</h4><p class="text-gray-400 mt-1">Special presentation by GESA.</p></div>
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">2:30 PM</p><h4 class="font-bold text-white text-lg mt-1">MLH Workshop : GitHub Copilot</h4><p class="text-gray-400 mt-1">30-minute workshop by MLH.</p></div>
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">3:30 PM</p><h4 class="font-bold text-white text-lg mt-1">Snacks</h4><p class="text-gray-400 mt-1">Satisfy that afternoon hunger.</p></div>
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">3:30 PM</p><h4 class="font-bold text-white text-lg mt-1">MLH Workshop : Google AI Studio </h4><p class="text-gray-400 mt-1">Another 30-minute session with MLH.</p></div>
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">6:30 PM</p><h4 class="font-bold text-white text-lg mt-1">MLH Mini Game : MS Paint Bob Ross</h4><p class="text-gray-400 mt-1">De-stress with a fun mini-game! You’ll be watching a Bob Ross video alongside hackers and creating a masterpiece.</p></div>
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">7:00 PM</p><h4 class="font-bold text-white text-lg mt-1">Dinner: Panda Express</h4><p class="text-gray-400 mt-1">Evening meal provided by Panda Express.</p></div>
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">10:00 PM</p><h4 class="font-bold text-white text-lg mt-1">Yoga</h4><p class="text-gray-400 mt-1">Relax and stretch with a yoga session.</p></div>
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><p class="text-red-400 font-semibold">12:00 AM</p><h4 class="font-bold text-white text-lg mt-1">Midnight Snacks</h4><p class="text-gray-400 mt-1">Fuel for the late-night grind.</p></div>
-                  </div>
-                </div>
-                <!-- Day 2 -->
-                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg shadow-black/20 p-8 reveal-right">
-                  <h3 class="text-3xl font-bold mb-2 text-white">Sunday</h3>
-                  <p class="text-lg text-gray-400 mb-8">February 22</p>
-                  <div class="space-y-8">
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">9:00 AM</p><h4 class="font-bold text-white text-lg mt-1">Breakfast: Einstein Bros Bagels</h4><p class="text-gray-400 mt-1">Good morning! Fresh bagels are served.</p></div>
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">9:00 AM</p><h4 class="font-bold text-white text-lg mt-1">1-Hour Warning</h4><p class="text-gray-400 mt-1">Final stretch before submission.</p></div>
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">10:00 AM</p><h4 class="font-bold text-white text-lg mt-1">Initial Submission</h4><p class="text-gray-400 mt-1">Submit a initial draft of your project to Devpost.</p></div>
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">10:30 AM</p><h4 class="font-bold text-white text-lg mt-1">Hacking Ends</h4><p class="text-gray-400 mt-1">Times up! Hacking is officially over.</p></div>
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">11:00 AM</p><h4 class="font-bold text-white text-lg mt-1">Judging Starts</h4><p class="text-gray-400 mt-1"></p></div>
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">1:00 PM</p><h4 class="font-bold text-white text-lg mt-1">Judging Ends & Lunch: Jimmy John's</h4><p class="text-gray-400 mt-1">Judging is complete. Enjoy some Jimmy John's!</p></div>
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">2:00 PM</p><h4 class="font-bold text-white text-lg mt-1">Closing Ceremony</h4><p class="text-gray-400 mt-1">Awards and final presentations.</p></div>
-                    <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><p class="text-red-400 font-semibold">2:45 PM</p><h4 class="font-bold text-white text-lg mt-1">Final Remarks</h4><p class="text-gray-400 mt-1">Dismissal and event wrap-up.</p></div>
-                  </div>
+            <div class="relative max-w-3xl mx-auto">
+              <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg shadow-black/20 p-8 md:p-10 reveal">
+                <h3 class="text-3xl font-bold mb-2 text-white">Saturday</h3>
+                <p class="text-lg text-gray-400 mb-8">October 17 &bull; WSU Pullman &bull; Room TBA</p>
+                <div class="space-y-8">
+                  <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">11:30 AM</p><h4 class="font-bold text-white text-lg mt-1">Doors Open, Check-In & Team Formation</h4><p class="text-gray-400 mt-1">Check in, pick up your swag, and meet potential teammates.</p></div>
+                  <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">11:45 AM</p><h4 class="font-bold text-white text-lg mt-1">Opening & Challenge Reveal</h4><p class="text-gray-400 mt-1">Discover the prompt, competition rules, and submission process.</p></div>
+                  <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">12:00 PM</p><h4 class="font-bold text-white text-lg mt-1">Programming Begins</h4><p class="text-gray-400 mt-1">Six hours of open-source collaboration begin.</p></div>
+                  <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">6:00 PM</p><h4 class="font-bold text-white text-lg mt-1">Programming Ends & Submissions Due</h4><p class="text-gray-400 mt-1">Submit your team's completed project for review.</p></div>
+                  <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">6:00 PM</p><h4 class="font-bold text-white text-lg mt-1">Project Review & Judging</h4><p class="text-gray-400 mt-1">Judges review each team's submission.</p></div>
+                  <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><div class="absolute left-[6px] top-5 w-0.5 h-full bg-white/20"></div><p class="text-red-400 font-semibold">6:30 PM</p><h4 class="font-bold text-white text-lg mt-1">Awards & Closing</h4><p class="text-gray-400 mt-1">Celebrate the day's projects and recognize the winning teams.</p></div>
+                  <div class="relative pl-8"><div class="absolute left-0 top-1 w-4 h-4 bg-red-500 rounded-full border-4 border-white/20"></div><p class="text-red-400 font-semibold">7:00 PM</p><h4 class="font-bold text-white text-lg mt-1">Event Ends</h4><p class="text-gray-400 mt-1">Thank you for building with us.</p></div>
                 </div>
               </div>
-
             </div>
           </div>
         </section>
@@ -730,9 +557,10 @@
                     <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer" class="text-sm hover:text-red-500 transition-colors duration-300 font-bold">Code of Conduct</a>
                     <a href="mailto:acm.vcea@wsu.edu" class="text-sm hover:text-red-500 transition-colors duration-300 font-bold">Contact Us</a>
                   </div>
-                  <span id="copyright-text" class="text-sm">&copy; 2025 CrimsonCode. All rights reserved.</span>
+                  <span id="copyright-text" class="text-sm">&copy; 2026 WSU Association of Computing Machinery. All rights reserved.</span>
                 </div>
               </div>
+            </div>
           </div>
         </footer>
         
@@ -996,12 +824,14 @@
               mobileMenu.classList.toggle('hidden');
               openIcon.classList.toggle('hidden');
               closeIcon.classList.toggle('hidden');
+              menuBtn.setAttribute('aria-expanded', !mobileMenu.classList.contains('hidden'));
             });
             mobileNavLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('hidden');
                     openIcon.classList.remove('hidden');
                     closeIcon.classList.add('hidden');
+                    menuBtn.setAttribute('aria-expanded', 'false');
                 });
             });
         }
@@ -1036,22 +866,6 @@
             });
         }
         
-        // Card Flip for touch/click
-        const flipCards = document.querySelectorAll('.card-flip');
-        flipCards.forEach(card => {
-            const flipCard = () => {
-              const isFlipped = card.classList.toggle('is-flipped');
-              card.setAttribute('aria-pressed', isFlipped);
-            }
-            card.addEventListener('click', flipCard);
-            card.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    flipCard();
-                }
-            });
-        });
-
         // Update copyright year
         const copyrightEl = document.getElementById('copyright-text');
         if(copyrightEl) copyrightEl.innerHTML = `&copy; ${new Date().getFullYear()} WSU Association of Computing Machinery. All rights reserved.`;
